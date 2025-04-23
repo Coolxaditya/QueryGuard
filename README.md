@@ -2,7 +2,7 @@
 
 ## Overview
 
-A dual-agent system for deep research, using Tavily for web crawling and OpenRouter for drafting structured summaries. Built with LangChain, LangGraph, and Streamlit.
+A dual-agent system for deep research, using Tavily for web crawling and OpenRouter for drafting structured summaries. Built with LangChain, LangGraph, and Streamlit. A Security and Privacy Module is integrated to ensure safe handling of data, API keys, and user privacy.
 
 ## Live Demo
 
@@ -55,6 +55,21 @@ Access the live application at: [https://deep-research-ai-agent.streamlit.app/](
 - **Dual-Agent System**:
   - **Research Agent**: Fetches data from the web using Tavily, returning structured results (title, content, URL).
   - **Draft Agent**: Generates structured summaries with sections: Research Summary, Key Findings, Analysis, and Conclusion, using LLM model.
+
+- **Security and Privacy Module**:
+
+   - **API Key Management**: Secure storage and handling of API keys.
+
+   - **Input Sanitization**: Prevents injection attacks.
+
+   - **Secure PDF Generation**: PDF outputs are securely generated with no sensitive data leakage.
+
+   - **Session Handling**: Manages sessions to avoid abuse and ensure secure interactions.
+
+   - **Privacy Consent**: Users must agree to terms before their data is processed.
+
+   - **Audit Logging**: Optional logging for security auditing purposes.
+
 - **Customizable Settings**:
   - Writing styles (Academic, Casual, Technical, etc.)
   - Citation formats (APA, MLA, IEEE)

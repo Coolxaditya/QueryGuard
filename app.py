@@ -14,6 +14,16 @@ import re
 from docx import Document
 from docx.shared import Pt, Inches
 
+import os
+
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+
+if not TAVILY_API_KEY or not OPENROUTER_API_KEY:
+    st.error("API keys are missing. Please check your .env file or secrets configuration.")
+    st.stop()
+
+
 # Set up logging
 logging.basicConfig(filename="research_agent.log", level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -907,6 +917,8 @@ with st.expander("📋 Writing Style Preview"):
         "url": "https://example.com/research",
     }
     st.code(format_citation(example_citation, citation_format))
+
+
 
 # Research button logic
 if st.button("Run Research"):
